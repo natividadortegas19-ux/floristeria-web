@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petalitos de Amor � Floristería de Alta Gama</title>
+  <meta name="description" content="Arreglos florales artesanales de alta gama. Flores frescas, diseños exclusivos y entrega elegante para cada ocasión.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ����������� HEADER · Glassmorphism ����������� -->
+  <nav class="navbar">
+    <div class="nav-logo" data-view="home">
+      <img class="nav-logo-img" src="logo.jpg" alt="Petalitos de Amor">
+      <span class="logo-text">Petalitos <em>de Amor</em></span>
+    </div>
+
+    <ul class="nav-links">
+      <li><button class="nav-btn active" data-view="home">Inicio</button></li>
+      <li><button class="nav-btn" data-view="catalog">Catálogo</button></li>
+      <li><button class="nav-btn" data-view="detail">Detalle</button></li>
+      <li><button class="nav-btn" data-view="favorites">Favoritos</button></li>
+      <li><button class="nav-btn" data-view="cart">Carrito</button></li>
+      <li><button class="nav-btn" data-view="auth">Mi Cuenta</button></li>
+    </ul>
+
+    <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+    </button>
+
+    <div class="nav-icons">
+      <!-- Buscador -->
+      <button class="icon-btn" id="nav-search" title="Buscar" aria-label="Buscar">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <!-- Favoritos -->
+      <button class="icon-btn" data-view="favorites" title="Favoritos" aria-label="Favoritos">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="badge" id="fav-count">0</span>
+      </button>
+      <!-- Carrito -->
+      <button class="icon-btn" data-view="cart" title="Carrito" aria-label="Carrito">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge" id="cart-count">0</span>
+      </button>
+      <!-- Cuenta -->
+      <button class="icon-btn" data-view="auth" title="Mi cuenta" aria-label="Mi cuenta">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ����������� 1 · INICIO ����������� -->
+    <section class="view active" id="view-home">
+
+      <!-- Hero editorial -->
+      <header class="hero">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="hero-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+              Floristería artesanal · Santo Domingo
+            </span>
+            <h1>Donde el color<br><em>florece</em> en tus momentos</h1>
+            <p>Arreglos florales artesanales elaborados con pasión, frescura y un toque de elegancia para cada ocasión especial.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg" data-view="catalog">
+                Ver Catálogo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn btn-outline btn-lg" data-view="auth">Crear Cuenta</button>
+            </div>
+            <div class="hero-trust">
+              <span class="ht-stars">�����</span>
+              <span class="ht-score"><strong>4.9</strong> · 1,240 reseñas</span>
+              <span class="ht-sep"></span>
+              <span class="ht-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Entrega el mismo día
+              </span>
+              <span class="ht-sep"></span>
+              <span class="ht-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Frescura 48h
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <span class="hv-blob" aria-hidden="true"></span>
+            <div class="hv-frame hv-main">
+              <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=900&q=80" alt="Ramo de rosas rosadas de Petalitos de Amor">
+            </div>
+            <div class="hv-frame hv-secondary">
+              <img src="https://images.unsplash.com/photo-1575178094668-132dc931ad35?auto=format&fit=crop&w=700&q=80" alt="Ramo de peonías pastel">
+            </div>
+            <div class="hv-card">
+              <span class="hv-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-10.5C4 6 7.5 3 12 7c4.5-4 8-1 8 3.5C20 14.5 16.5 18 12 21z"/></svg>
+              </span>
+              <div>
+                <strong>Frescura garantizada</strong>
+                <span>48 horas o la reemplazamos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Banner oferta: envío gratis -->
+      <section class="promo-banner reveal">
+        <span class="promo-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 7.8a1 1 0 0 0-.9-.9l-7.8 7.8a4 4 0 0 0 0 5.6l7.8 7.8a1 1 0 0 0 .9.9l8.2-8.2a1 1 0 0 0 0-1.4l-8.2-8.2z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <div class="promo-copy">
+          <span class="promo-kicker">Oferta especial</span>
+          <h3 class="promo-title">Envío gratis en pedidos desde <strong>RD$3,000</strong></h3>
+          <p>Los arreglos, ramos y cajas que celebran lo que más amas llegan a tu puerta sin costo de envío.</p>
+        </div>
+        <button class="btn btn-primary promo-cta" data-view="catalog">
+          Ver catálogo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </section>
+
+      <!-- Categorías -->
+      <section class="section-block reveal">
+        <span class="section-eyebrow">Explora</span>
+        <h2 class="section-title">Categorías</h2>
+        <p class="section-sub">Cada flor cuenta una historia, elige la tuya</p>
+
+        <div class="category-row">
+          <button class="cat-card" data-cat="ramos" style="--cat-color:#D4A5A5; --cat-bg:#F6E4E4">
+            <span class="cat-img-wrap">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=400&q=80" alt="Ramo de rosas elegante">
+            </span>
+            <span class="cat-name">Ramos</span>
+            <span class="cat-tag">Ver más</span>
+          </button>
+
+          <button class="cat-card" data-cat="cajas" style="--cat-color:#C7ACD8; --cat-bg:#EFE6F5">
+            <span class="cat-img-wrap">
+              <img src="https://images.unsplash.com/photo-1771085417618-c69f6209e540?auto=format&fit=crop&w=400&q=80" alt="Caja de regalo floral">
+            </span>
+            <span class="cat-name">Cajas</span>
+            <span class="cat-tag">Ver más</span>
+          </button>
+
+          <button class="cat-card" data-cat="arreglos" style="--cat-color:#B6DFBF; --cat-bg:#E6F5EB">
+            <span class="cat-img-wrap">
+              <img src="https://images.unsplash.com/photo-1578934691229-08987b226b47?auto=format&fit=crop&w=400&q=80" alt="Centro de mesa floral">
+            </span>
+            <span class="cat-name">Arreglos</span>
+            <span class="cat-tag">Ver más</span>
+          </button>
+
+          <button class="cat-card" data-cat="especiales" style="--cat-color:#E8D4A0; --cat-bg:#FAF0DC">
+            <span class="cat-img-wrap">
+              <img src="https://images.unsplash.com/photo-1609281991082-1ce5db9df927?auto=format&fit=crop&w=400&q=80" alt="Detalle floral premium">
+            </span>
+            <span class="cat-name">Especiales</span>
+            <span class="cat-tag">Ver más</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Populares -->
+      <section class="section-block alt-bg reveal">
+        <span class="section-eyebrow">Los más queridos</span>
+        <h2 class="section-title">Productos Populares</h2>
+        <p class="section-sub">Los favoritos de nuestros clientes este mes</p>
+        <div class="product-grid" id="popular-grid"></div>
+      </section>
+
+      <!-- Destacados -->
+      <section class="section-block reveal">
+        <span class="section-eyebrow">Selección exclusiva</span>
+        <h2 class="section-title">Destacados de la Semana</h2>
+        <p class="section-sub">Curados por nuestro florista jefe</p>
+        <div class="product-grid" id="featured-grid"></div>
+      </section>
+
+      <!-- Beneficios -->
+      <section class="benefits reveal">
+        <div class="benefit">
+          <span class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6FAF80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+          <p>Envío gratis<span>desde RD$3,000</span></p>
+        </div>
+        <div class="benefit">
+          <span class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6FAF80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <p>Flores frescas<span>garantizadas 48h</span></p>
+        </div>
+        <div class="benefit">
+          <span class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6FAF80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <p>Pago seguro<span>100% protegido</span></p>
+        </div>
+        <div class="benefit">
+          <span class="b-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6FAF80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
+          <p>Empaque regalo<span>incluido sin costo</span></p>
+        </div>
+      </section>
+
+      <!-- Preguntas frecuentes -->
+      <section class="section-block reveal">
+        <span class="section-eyebrow">Ayuda</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-sub">Todo lo que necesitas saber antes de pedir</p>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>
+              ¿Con cuánta anticipación debo hacer mi pedido?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Recomendamos 24 horas para arreglos estándar y 48 horas para diseños personalizados o eventos. Para pedidos antes de las 13:00 entregamos el mismo día.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              ¿Las flores llegan frescas?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Garantizamos la frescura durante 48 horas. Si alguna flor no llega en perfecto estado, la reemplazamos sin costo adicional.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              ¿Puedo personalizar mi arreglo?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Sí. En la página de detalle puedes elegir tamaño, notas aromáticas y tipo de empaque. También incluimos una tarjeta manuscrita con tu mensaje.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              ¿Cómo funciona el envío?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>El envío es gratis en pedidos desde RD$3,000. Para montos menores, el costo es RD$450. Entregamos de lunes a sábado en horario a convenir.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              ¿Aceptan códigos promocionales?
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Sí. Escribe el código <strong>FLOR10</strong> en el carrito y obtendrás un 10% de descuento en tu pedido.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter reveal">
+        <div class="nl-inner">
+          <span class="nl-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M3 6.5l9 6 9-6"/></svg>
+          </span>
+          <h2>�nete a nuestra lista</h2>
+          <p>Inspiración floral, lanzamientos exclusivos y un <strong>10% de bienvenida</strong> en tu primer pedido.</p>
+          <form class="nl-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="tu@correo.com" required>
+            <button type="submit" class="btn btn-primary">Suscribirme</button>
+          </form>
+          <small>Sin spam. Solo flores bonitas en tu bandeja.</small>
+        </div>
+      </section>
+    </section>
+
+    <!-- ����������� 2 · CATÁLOGO ����������� -->
+    <section class="view" id="view-catalog">
+      <div class="page-header reveal">
+        <span class="section-eyebrow">Nuestra colección</span>
+        <h1>El Catálogo</h1>
+        <p>Descubre cada arreglo artesanal de Petalitos de Amor</p>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="filters-panel">
+          <div class="filter-group">
+            <h3><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Buscar</h3>
+            <input type="text" id="search-input" placeholder="Nombre de flor�">
+          </div>
+
+          <div class="filter-group">
+            <h3>Categoría</h3>
+            <label class="check-row"><input type="radio" name="cat" value="" checked> Todas</label>
+            <label class="check-row"><input type="radio" name="cat" value="ramos"> Ramos</label>
+            <label class="check-row"><input type="radio" name="cat" value="cajas"> Cajas</label>
+            <label class="check-row"><input type="radio" name="cat" value="arreglos"> Arreglos</label>
+            <label class="check-row"><input type="radio" name="cat" value="especiales"> Especiales</label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Precio máximo · <strong id="price-label">RD$7,000</strong></h3>
+            <input type="range" id="price-range" min="2000" max="7000" value="7000" step="50">
+          </div>
+
+          <button class="btn btn-ghost btn-sm btn-block" id="clear-filters">Limpiar filtros</button>
+        </aside>
+
+        <div class="catalog-main">
+          <p class="result-count" id="result-count">12 productos</p>
+          <div class="product-grid" id="catalog-grid"></div>
+          <p class="empty-msg" id="catalog-empty" style="display:none">No se encontraron productos con esos filtros.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ����������� 3 · DETALLE ����������� -->
+    <section class="view" id="view-detail">
+      <div class="page-header reveal">
+        <span class="section-eyebrow">Personaliza tu arreglo</span>
+        <h1>Detalle del Producto</h1>
+      </div>
+
+      <div class="detail-layout">
+        <div class="gallery">
+          <div class="gallery-main" id="gallery-main"></div>
+          <div class="gallery-thumbs" id="gallery-thumbs"></div>
+        </div>
+
+        <div class="detail-info">
+          <span class="detail-cat" id="detail-cat">Ramos</span>
+          <h2 id="detail-name">Ramo de Rosas Silvestres</h2>
+          <div class="detail-rating" id="detail-rating">����� <span>(48 reseñas)</span></div>
+          <p class="detail-price" id="detail-price">RD$2,950</p>
+          <p class="detail-desc" id="detail-desc">Un ramo romántico que combina rosas silvestres con follaje delicado�</p>
+
+          <div class="meaning-box">
+            <h4>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Significado de las flores
+            </h4>
+            <p id="detail-meaning">Regalar rosas rojas simboliza amor profundo y pasión�</p>
+          </div>
+
+          <div class="contains-box">
+            <h4>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2"/></svg>
+              Lo que lleva este arreglo
+            </h4>
+            <div class="contains-chips" id="detail-contains"></div>
+          </div>
+
+          <div class="options-block">
+            <h4>Tamaño</h4>
+            <div class="option-pills" id="size-options">
+              <button class="pill active" data-extra="0">Chico</button>
+              <button class="pill" data-extra="600">Mediano (+RD$600)</button>
+              <button class="pill" data-extra="1200">Grande (+RD$1,200)</button>
+            </div>
+          </div>
+
+          <div class="options-block">
+            <h4>Notas aromáticas</h4>
+            <div class="option-pills" id="note-options">
+              <button class="pill active" data-extra="0">Sin nota</button>
+              <button class="pill" data-extra="250">Vainilla (+RD$250)</button>
+              <button class="pill" data-extra="300">Eucalipto (+RD$300)</button>
+            </div>
+          </div>
+
+          <div class="options-block">
+            <h4>Tipo de empaque</h4>
+            <div class="option-pills" id="pack-options">
+              <button class="pill active" data-extra="0">Papel kraft</button>
+              <button class="pill" data-extra="350">Caja de regalo (+RD$350)</button>
+              <button class="pill" data-extra="750">Caja premium (+RD$750)</button>
+            </div>
+          </div>
+
+          <div class="detail-total">
+            Total <strong id="detail-total-price">RD$2,950</strong>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn btn-primary btn-lg" id="detail-add-cart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Agregar al Carrito
+            </button>
+            <button class="btn btn-lila btn-lg" id="detail-add-fav">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Guardar en Favoritos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ����������� 4 · FAVORITOS ����������� -->
+    <section class="view" id="view-favorites">
+      <div class="page-header reveal">
+        <span class="section-eyebrow">Tu colección privada</span>
+        <h1>Mis Favoritos</h1>
+        <p>Los arreglos florales que guardaste para después</p>
+      </div>
+
+      <div class="product-grid" id="favorites-grid"></div>
+
+      <div class="empty-state" id="favorites-empty">
+        <div class="empty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>No tienes favoritos todavía</h3>
+        <p>Explora el catálogo y toca el ícono � para guardar tus arreglos preferidos.</p>
+        <button class="btn btn-primary" data-view="catalog">Ir al Catálogo</button>
+      </div>
+    </section>
+
+    <!-- ����������� 5 · CARRITO ����������� -->
+    <section class="view" id="view-cart">
+      <div class="page-header reveal">
+        <span class="section-eyebrow">Tu selección</span>
+        <h1>Carrito de Compras</h1>
+        <p>Revisa y personaliza tu pedido</p>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-items" id="cart-items">
+          <div class="cart-row cart-head">
+            <span>Producto</span><span>Personalización</span><span>Cantidad</span><span>Subtotal</span><span></span>
+          </div>
+        </div>
+
+        <div class="empty-state" id="cart-empty">
+          <div class="empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega arreglos florales desde el catálogo para continuar.</p>
+          <button class="btn btn-primary" data-view="catalog">Explorar Catálogo</button>
+        </div>
+
+        <aside class="summary-card" id="summary-card" style="display:none">
+          <h3>Resumen del Pedido</h3>
+          <div class="sum-row"><span>Subtotal</span><span id="sum-subtotal">RD$0</span></div>
+          <div class="sum-row"><span>Envío</span><span id="sum-shipping">RD$0</span></div>
+          <div class="sum-row"><span>ITBIS (18%)</span><span id="sum-tax">RD$0</span></div>
+          <div class="sum-divider"></div>
+          <div class="sum-row total"><span>Total</span><span id="sum-total">RD$0</span></div>
+
+          <label class="promo-label">Código promocional</label>
+          <div class="promo-row">
+            <input type="text" id="promo-input" placeholder="FLOR10">
+            <button class="btn btn-ghost btn-sm" id="promo-btn">Aplicar</button>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">
+            Finalizar Compra
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-block" data-view="catalog">� Seguir comprando</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ����������� 6 · AUTENTICACI�N ����������� -->
+    <section class="view" id="view-auth">
+      <div class="page-header reveal">
+        <span class="section-eyebrow">Bienvenida</span>
+        <h1>Mi Cuenta</h1>
+        <p>Gestiona tu cuenta Petalitos de Amor</p>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Iniciar Sesión</button>
+          <button class="auth-tab" data-tab="register">Registrarse</button>
+          <button class="auth-tab" data-tab="recover">Recuperar</button>
+        </div>
+
+        <form class="auth-form active" id="form-login">
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" placeholder="��������" required>
+          </div>
+          <label class="check-row"><input type="checkbox"> Recordarme</label>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button>
+          <p class="form-msg" id="msg-login"></p>
+        </form>
+
+        <form class="auth-form" id="form-register">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="María González" required>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+          </div>
+          <label class="check-row"><input type="checkbox" required> Acepto los <a href="#">términos y condiciones</a></label>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Crear Cuenta</button>
+          <p class="form-msg" id="msg-register"></p>
+        </form>
+
+        <form class="auth-form" id="form-recover">
+          <div class="form-group">
+            <label>Correo electrónico registrado</label>
+            <input type="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar enlace de recuperación</button>
+          <p class="form-msg" id="msg-recover"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Petalitos de Amor</h4>
+        <p>Flores frescas y arreglos artesanales para cada ocasión especial. Diseñado con amor desde 2020.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1.1L3 20l1.1-5.4A8.38 8.38 0 0 1 3 11.5a8.5 8.5 0 0 1 17 0z"/><path d="M8.7 9.3c.3 2.6 3.4 5.7 6 6l1.4-1.4-2-1.4-1 .7c-.8-.4-1.6-1.2-2-2l.7-1-1.4-2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <button class="f-link" data-view="home">Inicio</button>
+        <button class="f-link" data-view="catalog">Catálogo</button>
+        <button class="f-link" data-view="auth">Mi Cuenta</button>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Av. Gustavo Mejía Ricart 87, Piantini<br>Santo Domingo, DN<br>+1 (809) 555-1234<br>hola@petalitosdeamor.com</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lun � Vie: 9:00 � 19:00<br>Sáb: 9:00 � 15:00<br>Dom: Cerrado</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 Petalitos de Amor � Todos los derechos reservados</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+                                                                                                                                                                                                        
